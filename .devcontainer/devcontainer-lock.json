@@ -1,0 +1,9 @@
+{
+  "features": {
+    "ghcr.io/awf-project/devcontainer-features/flutter:1": {
+      "version": "1.0.0",
+      "resolved": "ghcr.io/awf-project/devcontainer-features/flutter@sha256:e2dba92247159cecc8efdcdafec617911b2f3dde5328dcedbd3daaeb2d99d2de",
+      "integrity": "sha256:e2dba92247159cecc8efdcdafec617911b2f3dde5328dcedbd3daaeb2d99d2de"
+    }
+  }
+}

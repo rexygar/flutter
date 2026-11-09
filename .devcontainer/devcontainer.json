@@ -1,0 +1,32 @@
+
+{
+    "name": "Flutter + Dart",
+    "image": "mcr.microsoft.com/devcontainers/base:bookworm",
+    "features": {
+        "ghcr.io/awf-project/devcontainer-features/flutter:1": {
+            "version": "stable",
+            "precacheWeb": true
+        }
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "GitHub.copilot",
+                "Dart-Code.dart-code",
+                "Dart-Code.flutter"
+            ],
+            "settings": {
+                "dart.flutterSdkPath": "/opt/flutter"
+            }
+        }
+    },
+    "forwardPorts": [8080],
+    "portsAttributes": {
+        "8080": {
+            "label": "Flutter Web",
+            "onAutoForward": "openBrowser"
+        }
+    },
+    "postCreateCommand": "flutter doctor && if [ -f pubspec.yaml ]; then flutter pub get; fi",
+    "remoteUser": "vscode"
+}
