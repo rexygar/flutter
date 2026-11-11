@@ -43,6 +43,19 @@ class ConfigurationScreen extends ConsumerWidget{
                 .cambiarModoOscuro(value);
             },
           ),
+          const SizedBox(height: 24),
+          SwitchListTile(
+            title: const Text('Mostrar Estadisticas'),
+            subtitle: const Text(
+              'Mostrar u ocultar las estadisticas',
+            ),
+            value: settings.mostrarEstadistica,
+            onChanged: (value) {
+              ref
+                .read(appSettingsProvider.notifier)
+                .mostrarEstadistica(value);
+            },
+          ),
           const Divider(),
           const ListTile(
             leading: Icon(Icons.info_outline),

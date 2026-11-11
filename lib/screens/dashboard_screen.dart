@@ -158,37 +158,56 @@ class DashboardScreen extends ConsumerWidget{
                         ),
                       ),
                       const SizedBox(height: 12),
-                      ListenableBuilder(
-                        listenable: settings,
-                        builder:(context, child) {
-                          return Column(
-                            children: [
-                              Card(
-                                child: ListTile(
-                                  leading: Icon(
-                                    settings.notificaciones ? Icons.notifications_active : Icons.notifications_off,
-                                  ),
-                                  title: const Text('Notificaciones'),
-                                  subtitle: Text(
-                                    settings.notificaciones ? 'Activadas' : 'Desactivadas',
-                                  ),
-                                ),
+                      Column(
+                        children: [
+                          Card(
+                            child: ListTile(
+                              leading: Icon(
+                                settings.notificaciones
+                                  ? Icons.notifications_active
+                                  : Icons.notifications_off,
                               ),
-                              const SizedBox(height: 12),
-                              Card(
-                                child: ListTile(
-                                  leading: Icon(
-                                    settings.modoOscuro ? Icons.dark_mode : Icons.light_mode,
-                                  ),
-                                  title: const Text('Modo Oscuro'),
-                                  subtitle: Text(
-                                    settings.modoOscuro ? 'Activado' : 'Desactivado',
-                                  ),
-                                ),
+                              title: const Text('Notificaciones'),
+                              subtitle: Text(
+                                settings.notificaciones
+                                  ? 'Activadas'
+                                  : 'Desactivadas',
                               ),
-                            ],
-                          );
-                        },
+                            )
+                          ),
+                          const SizedBox(height: 12),
+                          Card(
+                            child: ListTile(
+                              leading: Icon(
+                                settings.modoOscuro
+                                  ? Icons.dark_mode
+                                  : Icons.light_mode,
+                              ),
+                              title: const Text('Modo oscuro'),
+                              subtitle: Text(
+                                settings.modoOscuro
+                                  ? 'Activado'
+                                  : 'Desactivado',
+                              ),
+                            ),
+                          ),
+                          const SizedBox(height: 12),
+                          Card(
+                            child: ListTile(
+                              leading: Icon(
+                                settings.mostrarEstadistica
+                                  ? Icons.move_up
+                                  : Icons.move_down,
+                              ),
+                              title: const Text('Mostrar Estadisticas'),
+                              subtitle: Text(
+                                settings.mostrarEstadistica
+                                  ? 'Activado'
+                                  : 'Desactivado',
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
                       const SizedBox(height: 20),
                       construirContenido(),

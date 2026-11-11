@@ -3,21 +3,26 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 class AppSettingsState {
   final bool notificaciones;
   final bool modoOscuro;
+  final bool mostrarEstadistica;
 
   const AppSettingsState({
     this.notificaciones = true,
     this.modoOscuro = false,
+    this.mostrarEstadistica = true,
   });
 
   AppSettingsState copyWith({
     bool? notificaciones,
     bool? modoOscuro,
+    bool? mostrarEstadistica,
   }) {
     return AppSettingsState(
       notificaciones: 
         notificaciones ?? this.notificaciones,
       modoOscuro: 
         modoOscuro ?? this.modoOscuro,
+      mostrarEstadistica: 
+        mostrarEstadistica ?? this.mostrarEstadistica,
     );
   }
 }
@@ -41,6 +46,14 @@ class AppSettings extends Notifier<AppSettingsState>{
 
     state = state.copyWith(
       modoOscuro: valor,
+    );
+  }
+
+  void mostrarEstadistica(bool valor) {
+    if (state.mostrarEstadistica == valor) return;
+
+    state = state.copyWith(
+      mostrarEstadistica: valor
     );
   }
 }
