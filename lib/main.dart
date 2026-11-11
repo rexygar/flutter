@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:vendeme_agency_front/screens/home_screen.dart';
 
 void main() {
-  runApp(const MyApplication());
+  runApp(
+    const ProviderScope(
+      child: MyApplication(),
+    ),
+  );
 }
 
 class MyApplication extends StatelessWidget {
